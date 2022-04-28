@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #app {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            border: 2px solid green;
+            margin: 0 auto;
+        }
+
+        #box {
+            position: absolute;
+            left: 100px;
+            top: 0;
+            width: 31.75px;
+            height: 47.75px;
+            background-image: url("011-Braver01.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="box"></div>
+</div>
+</body>
+<script>
+    var box = document.querySelector("#box");
+    var iLeft = 0;
+    var iTop = 0;// 0  向下   -1向左  -2向右  -3向上
+    var timer;
+
+    function move() {
+        iLeft--;
+        if (iLeft < -3) iLeft = 0;
+        box.style.backgroundPositionX = (iLeft * 31.75) + "px";
+        box.style.backgroundPositionY = (iTop * 47.75) + "px";
+    }
+
+    function go() {
+        // 如果成立说明已经拥有定时器,不成立则没有定时器
+        if (!timer) {
+            move();
+            timer = setInterval(move, 300);
+            document.onkeyup = function () {
+                //清除定时器
+                timer = clearInterval(timer);
+                box.style.backgroundPositionX = "0px";
+                document.onkeyup = null;
+            }
+        }
+
+    }
+
+    // 增加键盘事件
+    document.onkeydown = function (e) {
+        e.preventDefault();
+        // keycode(37向左,38向上,39向右,40向下)
+        switch (e.keyCode) {
+            case 37: // 向左
+                iTop = -1;
+                box.style.left = Math.max(box.offsetLeft - 1, 0) + "px";
+                go();
+                break;
+            case 38: // 38向上
+                iTop = -3;
+                box.style.top = Math.max(box.offsetTop - 1, 0) + "px";
+                go();
+                break;
+            case 39: // 39向右
+                iTop = -2;
+                box.style.left = Math.min(box.offsetLeft + 1, app.clientWidth - box.offsetWidth) + "px";
+                go();
+                break;
+            case 40: // 40向下
+                iTop = 0;
+                box.style.top = Math.min(box.offsetTop + 1, app.clientHeight - box.offsetHeight) + "px";
+                go();
+                break;
+        }
+    }
+</script>
+</html>
