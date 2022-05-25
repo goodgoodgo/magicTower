@@ -1,0 +1,111 @@
+canvas{
+	display:block;
+}
+center>div{
+	width: 600px;
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	margin-left: -300px;
+	
+}
+center>div>div>div{
+	padding: 10px;
+	width: 90px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #999999;
+	color: white;
+	border: 3px solid silver;
+	border-radius: 5px;
+}
+.left{
+	float: left;
+}
+.left>div{
+	margin-bottom: 40px;
+}
+.right{
+	float: right;
+	padding-top: 200px;
+}
+#fly,#monsterBook{
+	position: absolute;
+	height: 45px;
+	width: 50px;
+	right: 70px;
+	cursor: pointer;
+}
+#monsterBook{
+	bottom: 12px;
+}
+#fly{
+	bottom: 68px;
+}
+#flyFloor{
+	position: absolute;
+	height: 25px;
+	width: 60px;
+	right: 10px;
+	bottom: 68px;
+	display: none;
+}
+#flyFloor::placeholder{
+	color: silver;
+	font-size: 11px;
+}
+#book,#talk{
+	margin-left: -280px;
+	width: 550px;
+	height: 330px;
+	background-color: grey;
+	opacity: 0.8;
+	display: none;
+}
+#cancel{
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	font-size: 35px;
+	font-weight: bold;
+	color: brown;	
+	top: 80px;
+	padding-left: 230px;
+	display: none;
+	cursor: pointer;
+}
+#book>ul{
+	overflow-y:auto;
+}
+#book>ul>li{
+	list-style: none;
+	margin-bottom: 25px;
+	color: wheat;
+}
+#book>ul>li>div{
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	width: 32px;
+	height: 32px;
+	clip: rect(0px ,32px , 32px, 0px);
+	margin: 0px;
+}
+#talk{
+	margin-left: -230px;
+	width: 450px;
+	height: 250px;
+	border: 2px solid purple;
+}
+#talk>span,#talk>div{
+	display: block;
+	margin-top: 20px;
+	font-size: 20px;
+	color: white;
+}
+#talk>div{
+	background-color: limegreen;
+	width: 380px;
+	cursor: pointer;
+	border-radius: 7px;
+}

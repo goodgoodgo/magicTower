@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>魔塔</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/alertify.core.css"/>
+		<link rel="stylesheet" href="css/alertify.default.css"/>
+		<script src="js/lib/jquery-3.0.0.min.js"></script>
+		<script src="js/lib/alertify.min.js"></script>
+		<script src="js/loader.js"></script>
+		<script src="js/hero.js"></script>
+		<script src="js/monster.js"></script>
+		<script src="js/SpecialTreasure.js"></script>
+		<script src="js/treasure.js"></script>
+		<script src="js/map.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/draw.js"></script>
+		<script src="js/talk.js"></script>
+		<script src="js/event.js"></script>
+	</head>
+	<body>
+		<center>
+			<canvas height="415px" width="670px" id="canvas">你的浏览器不支持canvas</canvas>
+			<div>
+				<div class="left">
+					<div id="top">
+						<span>第</span> <span id="floor">1</span> <span>层</span>	
+					</div>
+					
+					<div id="mid">
+						<div>
+							<span>生命：</span>
+							<span id="hp">1000</span>
+						</div>
+						<div>
+							<span>攻击：</span>
+							<span id="att">10</span>
+						</div>
+						<div>
+							<span>防御：</span>
+							<span id="def">10</span>
+						</div>
+						<div>
+							<span style="color: gold;">金币：</span>
+							<span id="coin">0</span>
+						</div>
+					</div>
+					<div id="bottom">
+						<div>
+							<span style="color: yellow;">黄钥匙：</span>
+							<span id="yk">0</span>
+						</div>
+						<div>
+							<span style="color: royalblue;">蓝钥匙：</span>
+							<span id="bk">0</span>
+						</div>
+						<div>
+							<span style="color: darkred;">红钥匙：</span>
+							<span id="rk">0</span>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div id="bottom">
+						<span>宝物</span>			
+					</div>
+				</div>
+				<div id="fly"></div>
+				<input type="input" id="flyFloor" placeholder="想去的楼层">
+				<div id="monsterBook"></div>
+			</div>
+			<div id="book"></div>
+			<div id="talk">
+				<span></span>
+				<div>增加 400 生命</div>
+				<div>增加 2 攻击</div>
+				<div>增加 4 防御</div>
+				<div>离开</div>
+			</div>
+			<span id="cancel">×</span>
+
+		</center>
+	</body>
+</html>
